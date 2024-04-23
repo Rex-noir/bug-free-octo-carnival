@@ -1,10 +1,4 @@
-/*!***************************************************************************************************************************************!*\
-  !*** css ./node_modules/.pnpm/css-loader@7.1.1_webpack@5.91.0_webpack-cli@5.1.4_/node_modules/css-loader/dist/cjs.js!./src/style.css ***!
-  \***************************************************************************************************************************************/
 @import url(https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lugrasimo&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap);
-/*!***************************************************************************************************************************************!*\
-  !*** css ./node_modules/.pnpm/css-loader@7.1.1_webpack@5.91.0_webpack-cli@5.1.4_/node_modules/css-loader/dist/cjs.js!./src/about.css ***!
-  \***************************************************************************************************************************************/
 :root {
   --font-merria: "Merriweather", serif;
   --font-lugrasio: "Lugrasimo", cursive;
@@ -15,6 +9,7 @@
   grid-template-columns: 1fr 2fr;
   width: 100%;
   height: 100%;
+  padding: 10px;
 }
 /* Left side */
 .left-container {
@@ -59,12 +54,23 @@ td {
 .right-container {
   width: 100%;
   grid-column: 2 / span 2;
-  outline: solid;
+  background-color: rgb(253, 231, 105);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+  border-radius: 20px;
+}
+.about-text {
+  text-align: justify;
+  font-family: var(--font-merria);
+  font-size: 20px;
+  font-weight: 400;
+  word-wrap: break-word;
+  line-height: calc(1ex / 0.32);
+  margin: calc(1ex / 0.42) 0;
 }
 
-/*!*******************************************************************************************************************************************!*\
-  !*** css ./node_modules/.pnpm/css-loader@7.1.1_webpack@5.91.0_webpack-cli@5.1.4_/node_modules/css-loader/dist/cjs.js!./src/style.css (1) ***!
-  \*******************************************************************************************************************************************/
 :root {
   --primary-color: rgba(255, 242, 0, 0.493);
   --secondary-color: rgba(23, 31, 244, 0.781);
