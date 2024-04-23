@@ -69,8 +69,8 @@ export default function about() {
   Our dedicated team, known for their attentiveness and genuine warmth, strives to provide exceptional service that anticipates your every need. 
   Every visit to Ace Restaurant is an opportunity to create lasting memories. 
   We invite you to step into our world of flavors, impeccable service, and genuine hospitality, and discover why Ace Restaurant has become a beloved institution in the neighborhood.`;
-  //demo
 
+  //demo
   leftside_container.appendChild(logoImage);
   leftside_container.appendChild(quickFactsContainer);
   //
