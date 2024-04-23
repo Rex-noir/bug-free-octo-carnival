@@ -322,6 +322,7 @@ button.reserve:hover {
   width: 100%;
   background-color: #8bff8b;
   height: 100%;
+  padding: 15px;
   text-align: left;
   font-family: var(--font-merria);
   font-weight: 500;
