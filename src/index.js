@@ -151,18 +151,41 @@ function home() {
   listTitle.textContent = "Popular Dishes";
   containerBody.appendChild(listTitle);
 
-  for (let i = 0; i < dishes; i++) {
-    let items = createElement("div", "item-div");
-    let dish_pic = createElement("img", "dish-pic");
-    dish_pic.setAttribute("src", images[`./dish${i}.jpg`]);
+  const isMobile = /iPhone|iPad|iPod|Android|BlackBerry|IEMobile/i.test(
+    navigator.userAgent
+  );
 
-    let dish_name = createElement("span", "dish-name");
-    dish_name.textContent = dish_names[i];
+  const observeIntersection = new IntersectionObserver(
+    (entries) => {
+      if (
+        entries[0].isIntersecting ||
+        (isMobile && window.innerHeight >= document.body.scrollHeight)
+      ) {
+        loadChefCards();
+        loadDishes();
+        console.log("Image loaded");
+      }
+    },
+    {
+      threshold: 0.5, // Optional: Minimum visibility threshold (adjust as needed)
+    }
+  );
+  const loadDishes = () => {
+    for (let i = 0; i < dishes; i++) {
+      let items = createElement("div", "item-div");
+      let dish_pic = createElement("img", "dish-pic");
+      dish_pic.setAttribute("src", images[`./dish${i}.jpg`]);
 
-    items.appendChild(dish_pic);
-    items.appendChild(dish_name);
-    listContainer.appendChild(items);
-  }
+      let dish_name = createElement("span", "dish-name");
+      dish_name.textContent = dish_names[i];
+
+      items.appendChild(dish_pic);
+      items.appendChild(dish_name);
+      listContainer.appendChild(items);
+    }
+    observeIntersection.unobserve(listContainer);
+  };
+  observeIntersection.observe(listContainer);
   containerBody.appendChild(listContainer);
 
   //chefs
@@ -172,18 +195,22 @@ function home() {
   chef_container_title.textContent = "Chefs";
   chef_container.appendChild(chef_container_title);
 
-  for (let i = 0; i < chefs; i++) {
-    let chef_card = createElement("div", "chef-card");
-    let chef = createElement("img", "chef-pics");
-    chef.setAttribute("src", chefs_pics[`./chef${i}.jpg`]);
+  function loadChefCards(entries) {
+    for (let i = 0; i < chefs; i++) {
+      let chef_card = createElement("div", "chef-card");
+      let chef = createElement("img", "chef-pics");
+      chef.setAttribute("src", chefs_pics[`./chef${i}.jpg`]);
 
-    let chef_name = createElement("span", "chef-name");
-    chef_name.textContent = chef_names[i];
+      let chef_name = createElement("span", "chef-name");
+      chef_name.textContent = chef_names[i];
 
-    chef_card.appendChild(chef);
-    chef_card.appendChild(chef_name);
-    chef_container.appendChild(chef_card);
+      chef_card.appendChild(chef);
+      chef_card.appendChild(chef_name);
+      chef_container.appendChild(chef_card);
+    }
+    observeIntersection.unobserve(chef_container);
   }
+  observeIntersection.observe(chef_container);
 
   containerBody.appendChild(chef_container_title);
   containerBody.appendChild(chef_container);
