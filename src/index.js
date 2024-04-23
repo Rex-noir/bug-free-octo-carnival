@@ -216,55 +216,8 @@ function home() {
   containerBody.appendChild(chef_container);
 
   //footer
-  let footer_container = createElement("div", "footer-container");
-  let social_address_wrapper = createElement("div", "social-address-wrapper");
-
-  let social_title = createElement("h3", "social-title");
-  social_title.textContent = "For more updates, follow us on: ";
-
-  let social_media_container = createElement("div", "social-container");
-  social_media_container.appendChild(social_title);
-
-  let social_icons_container = createElement("div", "social-icon-container");
-  social_media_icons.forEach((iconseach) => {
-    let icon = createElement("img", "social-media-icon");
-    icon.setAttribute("src", social_icons[`./${iconseach}`]);
-    social_icons_container.appendChild(icon);
-  });
-  social_media_container.appendChild(social_icons_container);
-  //=================================
-  let address_container = createElement("div", "address-container");
-  let physical_address = createElement("div", "physical-address");
-  physical_address.innerHTML = `
-  <h3>Physical Address: </h3><address>
-  124 Main Street <br>
-  Fiftyville, StateVille 66666 <br>
-  United States 
-  </address>`;
-
-  let contact_address = createElement("div", "contact-address");
-  contact_address.innerHTML = `<h3>Contact addresses: </h3>
-  <address>
-  Email:<a href="mailto:restaurant@ace.org">restaurant@ace.org</a><br>
-  Phone:<a href="tel:9806969666">9806969666</a><br>
-  FAQ : <a href="https://faq.acerestaurant.com">faq.acerestaurant.com</a>
-  </address>`;
-  address_container.appendChild(physical_address);
-  address_container.appendChild(contact_address);
-  //=============================
-  social_address_wrapper.appendChild(social_media_container);
-  social_address_wrapper.appendChild(address_container);
-
-  let foot_text_container = createElement("div", "foot-text-container");
-  foot_text_container.innerHTML =
-    "&copy; 2024 &nbsp;<strong>Ace Restaurant</strong>. All rights reserved";
-
-  social_address_wrapper.appendChild(foot_text_container);
-  footer_container.appendChild(social_address_wrapper);
-
   container.appendChild(container_manifesto);
   container.appendChild(containerBody);
-  container.appendChild(footer_container);
 }
 
 function createElement(tag, className, id) {

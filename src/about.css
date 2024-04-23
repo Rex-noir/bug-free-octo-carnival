@@ -1,0 +1,71 @@
+:root {
+  --font-merria: "Merriweather", serif;
+  --font-lugrasio: "Lugrasimo", cursive;
+  --font-eb-garamond: "EB Garamond", serif;
+}
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+/* Left side */
+.left-container {
+  grid-column: 1 / span 1;
+  width: 100%;
+  padding: 10px;
+}
+.about-logo-image {
+  width: 150px;
+  height: 150px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: gold;
+}
+.factsbox {
+  width: 100%;
+}
+table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: stretch;
+  gap: 10px;
+  width: 100%;
+  border-collapse: collapse;
+}
+caption {
+  font-family: var(--font-eb-garamond);
+}
+tr,
+td,
+th {
+  border: solid grey;
+  padding: 20px;
+  font-family: var(--font-merria);
+}
+td {
+  text-align: left;
+  font-size: 15px;
+}
+/* Right Side */
+.right-container {
+  width: 100%;
+  grid-column: 2 / span 2;
+  background-color: rgb(253, 231, 105);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+  border-radius: 20px;
+}
+.about-text {
+  text-align: justify;
+  font-family: var(--font-merria);
+  font-size: 20px;
+  font-weight: 400;
+  word-wrap: break-word;
+  line-height: calc(1ex / 0.32);
+  margin: calc(1ex / 0.42) 0;
+}
